@@ -26,7 +26,7 @@
         </div>
 
         <div class="form-group">
-          <%= f.label :start_time, 'Start Time' %>
+          <%= f.label :start_time, 'Start Time (24HR)' %>
           <div>
             <% if @timesheet.errors[:start_time].present? %>
               <p class="notice error">
@@ -38,7 +38,7 @@
         </div>
 
         <div class="form-group">
-          <%= f.label :finish_time, 'Finish Time' %>
+          <%= f.label :finish_time, 'Finish Time (24HR)' %>
           <div>
             <% if @timesheet.errors[:finish_time].present? %>
               <p class="notice error">

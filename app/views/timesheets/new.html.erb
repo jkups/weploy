@@ -1,0 +1,56 @@
+<%= render partial: "session/navbar" %>
+
+<% if flash[:error].present? %>
+	<div class="notice">
+		<div class="container">
+			<i class="fas fa-ban"></i> <%= flash[:error] %>
+		</div>
+	</div>
+<% end %>
+
+<div class="section">
+  <div class="container">
+    <div class="wrapper">
+      <h3>Create Timesheet Entry</h3>
+      <%= form_with model:@timesheet, local:true do |f| %>
+        <div class="form-group">
+          <%= f.label :date_of_entry, 'Date of Entry' %>
+          <div>
+            <% if @timesheet.errors[:date_of_entry].present? %>
+              <p class="notice error">
+                <%= @timesheet.errors[:date_of_entry].first %>
+              </p>
+            <% end %>
+            <%= f.date_field :date_of_entry, placeholder: 'Enter date', class:'form-control', required:true %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :start_time, 'Start Time' %>
+          <div>
+            <% if @timesheet.errors[:start_time].present? %>
+              <p class="notice error">
+                <%= @timesheet.errors[:start_time].first %>
+              </p>
+            <% end %>
+            <%= f.time_field :start_time, placeholder: 'Enter start time', class:'form-control', required:true %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :finish_time, 'Finish Time' %>
+          <div>
+            <% if @timesheet.errors[:finish_time].present? %>
+              <p class="notice error">
+                <%= @timesheet.errors[:finish_time].first %>
+              </p>
+            <% end %>
+            <%= f.time_field :finish_time, placeholder: 'Enter finish time', class:'form-control', required:true %>
+          </div>
+        </div>
+        <%= f.button 'Create Entry', class:'button'%>
+        <%= link_to 'Go Back', timesheets_path, class:'button' %>
+      <% end %>
+    </div>
+  </div>
+</div>

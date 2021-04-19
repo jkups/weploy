@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap');
+
+*, html {
+  margin: 0;
+  padding:0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+h2, h3 {
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+h3{
+  margin-top: 35px;
+}
+ul {
+  list-style: none;
+}
+
+.navlink a {
+  text-decoration: none;
+  color: black;
+}
+
+.navlink a:hover {
+  text-decoration: underline;
+}
+
+input {
+  display: block;
+  margin: 15px 0;
+  padding: 15px 10px;
+  border: 1px solid #baede6;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+input:focus {
+  border: 1px solid #17524a;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 0;
+}
+
+.container {
+  width: 980px;
+  margin: 0 auto;
+}
+
+.wrapper {
+  margin: 30px 0;
+  padding: 30px;
+  background-color: #f8fbfb;
+  border-radius: 10px;
+  box-shadow: 1px 1px lightgrey;
+}
+
+.table {
+  display: grid;
+  grid-template-columns: 5% 15% auto 25% 15%;
+}
+
+.table.heading {
+  padding: 10px 0;
+  background-color: #2C9E8F;
+  color:white;
+}
+
+.table.row {
+  padding: 5px;
+}
+
+.table .item {
+  padding: 5px 15px;
+}
+
+.even {
+  background-color: #c0f3ec;
+  color: black;
+}
+
+.odd:hover, .even:hover {
+  background-color: #3EDEC9;
+}
+
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  margin: 10px 10px 10px 0;
+  background-color: #baede6;
+  color: #17524a;
+  text-decoration: none;
+  border-radius: 10px;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #17524a;
+  color: white;
+}
+
+.form-group {
+  display:flex;
+  align-items: center;
+}
+
+.form-group label {
+  width: 20%;
+}
+
+.form-group > div, input {
+  width: 100%;
+}
+
+.form-control.is-invalid {
+  border: 1px solid #DB3114;
+}
+
+.notice.error {
+  margin-bottom: -20px;
+  padding: 10px;
+  background-color:#DB3114;
+  border-radius: 5px;
+  color:white;
+}
+
+.notice .error, .notice .success {
+  margin-bottom: -20px;
+  padding: 10px;
+  background-color:#DB3114;
+  color: white;
+  box-sizing: border-box;
+  border-left:10px solid #8F1500;
+  border-radius: 5px;
+}
+
+.notice .success {
+  color:black;
+  background-color:#14DB85;
+  border-left:10px solid #068F54;
+}
+
+.title {
+  text-align:center;
+  margin:20px 0;
+  margin-bottom: 30px;
+  color:grey;
+  color: #17524a
+}

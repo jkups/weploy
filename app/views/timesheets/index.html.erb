@@ -1,0 +1,39 @@
+<%= render partial: "session/navbar" %>
+
+<% if flash[:success].present? %>
+	<div class="notice">
+		<div class="container success">
+			<%= flash[:success] %>
+		</div>
+	</div>
+<% end %>
+
+<div class="section">
+  <div class="container">
+    <div class="wrapper">
+      <%= link_to 'Create Timesheet Entry', new_timesheet_path, class: 'button' %>
+      <h3>Timesheet Entries</h3>
+      <div>
+        <ul class="table heading">
+          <li class="item">S/N</li>
+          <li class="item">Date of Entry</li>
+          <li class="item">Start Time - Finish Time</li>
+          <li class="item">Calculated Amount</li>
+          <li class="item">Status</li>
+        </ul>
+        <% @timesheets.each_with_index do |timesheet, idx| %>
+          <ul class='table row <%= (idx + 1) % 2 == 0 ? "even" : "odd" %>'>
+            <li class="item"><%= idx + 1 %></li>
+            <li class="item"><%= timesheet.date_of_entry.strftime("%d/%m/%Y") %></li>
+            <li class="item">
+              <%= timesheet.start_time.strftime("%H:%M") %> -
+              <%= timesheet.finish_time.strftime("%H:%M") %>
+            </li>
+            <li class="item"><%= number_to_currency(timesheet.amount) %></li>
+            <li class="item"><%= timesheet.status %></li>
+          </ul>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
